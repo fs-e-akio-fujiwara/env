@@ -9,7 +9,9 @@ switch.vim
 syntastic
 unite-rails
 unite.vim
+vim-coffee-script
 vim-endwise
+vim-indent-guides
 vim-rails
 vim-slime
 vimshell

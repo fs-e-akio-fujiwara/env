@@ -16,6 +16,8 @@ NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 """"""""""""""""""""""""""""""
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
@@ -166,6 +168,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set laststatus=2
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+au BufRead,BufNewFile,BufReadPre *.erb   set filetype=html
 " clipboard use in OS
 set clipboard+=unnamed
 " esc key map
@@ -191,7 +195,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby,coffee,html,css,javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 augroup MyXML
   autocmd!
@@ -250,6 +254,7 @@ let g:neocomplcache_manual_completion_start_length = 0
 \ 'java' : $HOME.'/.vim/dict/java.dict',
 \ 'cpp' : $HOME.'/.vim/dict/cpp.dict',
 \ 'javascript' : $HOME.'/.vim/dict/javascript.dict',
+\ 'coffeescript' : $HOME.'/.vim/dict/coffeescript.dict',
 \ 'css' : $HOME.'/.vim/dict/css.dict',
 \ 'ocaml' : $HOME.'/.vim/dict/ocaml.dict',
 \ 'perl' : $HOME.'/.vim/dict/perl.dict',

@@ -3,8 +3,8 @@ alias now='date +%G%m%d%H%M%S'
 alias less='lv'
 alias lgrep-r="find . -type d -name .svn -prune -o -type f -print | xargs lgrep"
 alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
-alias sd=". ~/env/\sd"
-alias sdd=". ~/env/\sdd"
+alias ap=". ~/env/\ap"
+alias app=". ~/env/\app"
 alias screen="screen -c ~/env/.screenrc -S screen_fujiwara"
 
 PS1="\u@\h:\w\$(__git_ps1)> "
