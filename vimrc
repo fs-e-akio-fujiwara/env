@@ -16,8 +16,6 @@ NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'nathanaelkane/vim-indent-guides'
 """"""""""""""""""""""""""""""
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
@@ -168,8 +166,11 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set laststatus=2
+set autoindent
+set smartindent
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 au BufRead,BufNewFile,BufReadPre *.erb   set filetype=html
+au BufRead,BufNewFile,BufReadPre *.slim   set filetype=html
 " clipboard use in OS
 set clipboard+=unnamed
 " esc key map
@@ -193,9 +194,9 @@ autocmd BufNewFile,BufRead *.go set filetype=go
 autocmd FileType eruby,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript,json setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType ruby,coffee,html,css,javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby,eruby,html,slim,css,python,javascript,json,scss,css,conf,yml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 augroup MyXML
   autocmd!

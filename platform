@@ -1,6 +1,6 @@
 #! /bin/bash
 TYPE=$1
-APP_DIR="/Users/akio.fujiwara/zelda-allstars/zelda-app"
+APP_DIR="/Users/akio.fujiwara/zelda-allstars/zelda-platform"
 case $TYPE in
 	"conf" | "config")
 		echo $APP_DIR/config/;;
@@ -15,9 +15,13 @@ case $TYPE in
 	"view" | "views")
 		echo $APP_DIR/app/views;;
 	"ap" | "api")
-		echo $APP_DIR/app/api;;
+		echo $APP_DIR/app/grapes/api;;
 	"ng" | "ng-app")
 		echo $APP_DIR/app/ng-app;;
+	"js" | "javascript")
+		echo $APP_DIR/app/assets/javascripts;;
+	"css" | "stylesheet")
+		echo $APP_DIR/app/assets/stylesheets;;
 	"hp" | "help")
 		echo $APP_DIR/app/helpers;;
 	*)
